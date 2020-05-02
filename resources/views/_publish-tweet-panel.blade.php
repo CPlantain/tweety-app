@@ -14,7 +14,7 @@
 			<img 
 				src="{{ auth()->user()->avatar }}" 
 				alt="your avatar" 
-				class="rounded-full mr-2 w-10"
+				class="rounded-full h-10 w-10 object-cover object-top"
 			>
 
 			<button 

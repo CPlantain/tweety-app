@@ -55,7 +55,7 @@ class User extends Authenticatable
 
     public function getAvatarAttribute()
     {
-        return './images/avatar.png';
+        return '../images/avatar.png';
     }
 
     public function timeline()
@@ -65,5 +65,10 @@ class User extends Authenticatable
         return Tweet::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id) 
             ->latest()->get();
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'name';
     }
 }
