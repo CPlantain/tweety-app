@@ -44,10 +44,9 @@ class User extends Authenticatable
                     ->latest();
     }
 
-    public function getAvatarAttribute()
+    public function getAvatarAttribute($value)
     {
-        dd(storage_path('path/to/file'));
-        return '../images/avatar.png';
+        return asset('storage/' . $value);
     }
 
     public function timeline()

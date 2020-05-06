@@ -50,12 +50,20 @@
 				Avatar	
 			</label>
 
-			<input class="border border-gray-400 rounded-lg p-2 w-full" 
-				type="file"
-				name="avatar"
-				id="avatar"
-				required 
-			>
+			<div class="flex">
+				<input class="border border-gray-400 rounded-lg p-2 w-full" 
+					type="file"
+					name="avatar"
+					id="avatar"
+					required 
+				>
+
+				<img src="{{ $user->avatar }}" 
+					alt="your avatar"
+					class="rounded-full h-12 w-12 ml-2 object-cover object-top"
+				>
+			</div>
+			
 
 			@error('avatar')
 				<p class="text-red-500 text-xs mt-2">{{ $message }}</p>
