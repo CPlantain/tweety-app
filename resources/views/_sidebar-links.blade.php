@@ -8,7 +8,7 @@
 	</li>
 
 	<li>
-		<a href="/" 
+		<a href="{{ route('explore') }}" 
 			class="font-bold text-lg mb-4 block"
 		>
 			Explore
