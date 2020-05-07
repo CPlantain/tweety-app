@@ -54,8 +54,7 @@
 				<input class="border border-gray-400 rounded-lg p-2 w-full" 
 					type="file"
 					name="avatar"
-					id="avatar"
-					required 
+					id="avatar" 
 				>
 
 				<img src="{{ $user->avatar }}" 

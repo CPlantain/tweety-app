@@ -38,7 +38,7 @@ class ProfilesController extends Controller
     			'max:255',
     			Rule::unique('users')->ignore($user)
     		],
-    		'avatar' => ['required', 'file'],
+    		'avatar' => ['file'],
     		'password' => [
     			'string', 
     			'required', 
@@ -48,8 +48,10 @@ class ProfilesController extends Controller
     		]
     	]);
 
-    	$attributes['avatar'] = request('avatar')->store('avatars');
-
+    	if (request('avatar')) {
+    		$attributes['avatar'] = request('avatar')->store('avatars');
+    	}
+    	
     	$user->update($attributes);
 
     	return redirect($user->path());
