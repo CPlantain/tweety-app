@@ -1,5 +1,5 @@
 <x-master>
-    <div class="container mx-auto flex justify-center">
+    <div class="container mx-auto flex justify-center mb-6">
         <div class="px-12 py-6 bg-gray-300 rounded-lg">
             <div class="col-md-8">
                 <div class="font-bold text-lg mb-4">{{ __('Login') }}</div>
@@ -14,7 +14,7 @@
                                 E-mail  
                             </label>
 
-                            <input class="rounded p-2 px-8 w-full" 
+                            <input class="rounded p-2 px-4 w-full" 
                                 type="email"
                                 name="email"
                                 id="email"
@@ -35,7 +35,7 @@
                                 Password    
                             </label>
 
-                            <input class="rounded p-2 px-8 w-full" 
+                            <input class="rounded p-2 px-4 w-full" 
                                 type="password"
                                 name="password"
                                 id="password"
