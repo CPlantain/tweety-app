@@ -22,6 +22,8 @@ Route::middleware('auth')->group(function () {
 	Route::post('/tweets', 'TweetsController@store')->name('tweet');
 
 	Route::post('/profiles/{user:username}/follow', 'FollowsController@store')->name('follow');
+
+	Route::get('/profiles/{user:username}', 'ProfilesController@show')->name('profile');
 	Route::get(
 		'/profiles/{user:username}/edit',
 		'ProfilesController@edit'
@@ -32,10 +34,7 @@ Route::middleware('auth')->group(function () {
 		'ProfilesController@update'
 	)->middleware('can:edit,user');
 	
-	Route::get('/explore', 'ExploreController@index')->name('explore');
+	Route::get('/explore', 'ExploreController')->name('explore');
 });
-
-Route::get('/profiles/{user:username}', 'ProfilesController@show')->name('profile');
-
 
 Auth::routes();
