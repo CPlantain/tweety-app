@@ -1,5 +1,9 @@
 <?php
 
+namespace App;
+
+use Illuminate\Database\Eloquent\Builder;
+
 trait Likable 
 {
 	public function likes()
@@ -11,6 +15,16 @@ trait Likable
     // {
     // 	return $this->hasMany(Like::class);
     // }
+
+    public function scopeWithLikes(Builder $query)
+    {
+    	$query->leftJoinSub(
+    		'SELECT tweet_id, sum(liked) likes, sum(!liked) dislikes FROM likes GROUP BY tweet_id',
+    		'likes',
+    		'likes.tweet_id',
+    		'tweets.id'
+    	);
+    }
     
 	public function like($user = null, $liked = true)
     {
